@@ -48,24 +48,19 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset(
-                activediceImage,
-                width: 300,
-              ),
-              ElevatedButton(
-                  onPressed: rollDice,
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.white),
+              InkWell(
+                onTap: rollDice,
+                child: Container(
+                  color: Colors.white,
+                  child: Image.asset(
+                    activediceImage,
+                    width: 300,
                   ),
-                  child: const Text(
-                    'ROLL DICE',
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold),
-                  ))
+                ),
+              )
             ],
           ),
-        ));
+        )
+    );
   }
 }
